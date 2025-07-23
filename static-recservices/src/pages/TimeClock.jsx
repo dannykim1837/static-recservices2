@@ -1,8 +1,23 @@
-import React, { useState } from 'react';
-import '../styles/siteStyle.css';
+import React, { useEffect, useState } from "react";
+import useShiftsWithEmployeeDetails from '../utils/useShiftsWithEmployeeDetails';
+import Menu from '../components/Menu';
 import '../styles/timeClock.css';
+import '../styles/siteStyle.css';
 
-const TimeClock = () => {
+// ===== Column Labels =====
+const FIELD_LABELS = {
+  shiftStart: 'Shift Start',
+  shiftEnd: 'Shift End',
+  location: 'Location',
+  position: 'Position',
+  duration: 'Duration',
+  payEstimate: 'Pay Estimate',
+};
+
+function TimeClockPage() {
+  // ===== Data Hooks =====
+  const { detailedShifts, fetchShiftsWithDetails, loading, error } = useShiftsWithEmployeeDetails();
+  const [search, setSearch] = useState('');
   const [visibleFields, setVisibleFields] = useState({
     shiftStart: true,
     shiftEnd: true,
@@ -12,36 +27,11 @@ const TimeClock = () => {
     payEstimate: true,
   });
 
-  const testData = [
-    {
-      name: "Michael Rodriguez",
-      events: [
-        {
-          employeeName: "Michael Rodriguez",
-          date: "March 24",
-          location: "Rec Services",
-          position: "Lifeguard",
-          shiftStart: "10:00 AM",
-          clockIn: "9:55 AM",
-          clockOut: "11:55 AM",
-          shiftEnd: "12:00 PM",
-          payRate: 22
-        },
-        {
-          employeeName: "Michael Rodriguez",
-          date: "March 25",
-          location: "Rec Services",
-          position: "Lifeguard",
-          shiftStart: "11:00 AM",
-          clockIn: "11:00 AM",
-          clockOut: "2:00 PM",
-          shiftEnd: "2:00 PM",
-          payRate: 22
-        }
-      ]
-    }
-  ];
+  useEffect(() => {
+    fetchShiftsWithDetails();
+  }, [fetchShiftsWithDetails]);
 
+  // ===== Utils: Toggle columns =====
   const toggleField = (field) => {
     setVisibleFields((prev) => ({
       ...prev,
@@ -49,23 +39,27 @@ const TimeClock = () => {
     }));
   };
 
+  // ===== Utils: Duration =====
   const calculateDuration = (start, end) => {
+    if (!start || !end) return '';
     try {
-      const s = new Date(`1/1/2000 ${start}`);
-      const e = new Date(`1/1/2000 ${end}`);
+      const s = new Date(start);
+      const e = new Date(end);
       const mins = Math.floor((e - s) / 60000);
       const h = Math.floor(mins / 60);
       const m = mins % 60;
       return `${h}h ${m}m`;
     } catch {
-      return "- hours";
+      return "-";
     }
   };
 
+  // ===== Utils: Pay =====
   const calculatePay = (start, end, rate) => {
+    if (!start || !end || !rate) return '';
     try {
-      const s = new Date(`1/1/2000 ${start}`);
-      const e = new Date(`1/1/2000 ${end}`);
+      const s = new Date(start);
+      const e = new Date(end);
       const hours = (e - s) / (1000 * 60 * 60);
       return `$${(hours * rate).toFixed(2)}`;
     } catch {
@@ -73,69 +67,170 @@ const TimeClock = () => {
     }
   };
 
+  // ===== Utils: Name fallback, flexible for various data =====
+  const getEmployeeName = (shift) => {
+    if (shift.employee?.firstName && shift.employee?.lastName)
+      return `${shift.employee.firstName} ${shift.employee.lastName}`;
+    if (shift.employee?.name)
+      return shift.employee.name;
+    if (shift.employee?.fullName)
+      return shift.employee.fullName;
+    if (shift.employee?.display_name)
+      return shift.employee.display_name;
+    if (shift.employeeName)
+      return shift.employeeName;
+    if (shift.employee?.firstName)
+      return shift.employee.firstName;
+    if (shift.employee?.lastName)
+      return shift.employee.lastName;
+    if (shift.employee) {
+      const firstString = Object.values(shift.employee).find(
+        (val) => typeof val === "string" && val.trim().length > 0
+      );
+      if (firstString) return firstString;
+    }
+    return "";
+  };
+
+  // ===== Utils: Date fallback =====
+  const getDate = (shift) =>
+    shift.date ||
+    (shift.start_time && shift.start_time.split("T")[0]) ||
+    shift.clockIn?.split("T")[0] ||
+    shift.clockOut?.split("T")[0] ||
+    shift.shiftStart?.split("T")[0] ||
+    "";
+
+  // ===== Utils: Time fallback =====
+  const getTime = (val) =>
+    (val && val.includes("T")) ? val.split("T")[1]?.slice(0, 5) : (val || "");
+
+  // ===== Utils: Location/Position fallback =====
+  const getLocation = (shift) =>
+    shift.location?.name || shift.locationName || "";
+
+  const getPosition = (shift) =>
+    shift.position?.name || shift.positionName || "";
+
+  // ===== Filter: Search by any name (no error) =====
+  const filteredShifts = (detailedShifts || []).filter(shift =>
+    getEmployeeName(shift).toLowerCase().includes(search.trim().toLowerCase())
+  );
+
+  // ===== Render =====
   return (
-    <div>
-      <main>
-        <h1>Filters</h1>
-        <div id="TimeClockFilters">
-          {Object.entries(visibleFields).map(([field, isVisible]) => (
-            <label key={field}>
-              {field.replace(/([A-Z])/g, ' $1')}
-              <input
-                type="checkbox"
-                className="timeClockFilter"
-                value={`timeClockEvent__${field}`}
-                checked={isVisible}
-                onChange={() => toggleField(field)}
-              />
-            </label>
-          ))}
-        </div>
-
-        {/* Column Headers */}
-        <div id="columnHeaders">
-          <h3 className="timeClockEvent__employeeName timeClockEvent__header">Name</h3>
-          <h3 className="timeClockEvent__date timeClockEvent__header">Date</h3>
-          {visibleFields.location && <h3 className="timeClockEvent__location timeClockEvent__header">Location</h3>}
-          {visibleFields.position && <h3 className="timeClockEvent__position timeClockEvent__header">Position</h3>}
-          {visibleFields.shiftStart && <h3 className="timeClockEvent__shiftStart timeClockEvent__header">Shift Start</h3>}
-          <h3 className="timeClockEvent__clockIn timeClockEvent__header">Clock In</h3>
-          <h3 className="timeClockEvent__clockOut timeClockEvent__header">Clock Out</h3>
-          {visibleFields.shiftEnd && <h3 className="timeClockEvent__shiftEnd timeClockEvent__header">Shift End</h3>}
-          {visibleFields.duration && <h3 className="timeClockEvent__duration timeClockEvent__header">Duration</h3>}
-          {visibleFields.payEstimate && <h3 className="timeClockEvent__payEstimate timeClockEvent__header">Pay Estimate</h3>}
-        </div>
-
-        {/* Data Rows */}
-        <div id="employeeList">
-          {testData.map((emp, empIdx) =>
-            emp.events.map((event, eventIdx) => (
-              <div className="timeClockEvent" key={`${empIdx}-${eventIdx}`}>
-                <div className="timeClockEvent__employeeName">{event.employeeName}</div>
-                <div className="timeClockEvent__date">{event.date}</div>
-                {visibleFields.location && <div className="timeClockEvent__location">{event.location}</div>}
-                {visibleFields.position && <div className="timeClockEvent__position">{event.position}</div>}
-                {visibleFields.shiftStart && <div className="timeClockEvent__shiftStart">{event.shiftStart}</div>}
-                <div className="timeClockEvent__clockIn">{event.clockIn}</div>
-                <div className="timeClockEvent__clockOut">{event.clockOut}</div>
-                {visibleFields.shiftEnd && <div className="timeClockEvent__shiftEnd">{event.shiftEnd}</div>}
-                {visibleFields.duration && (
-                  <div className="timeClockEvent__duration">
-                    {calculateDuration(event.clockIn, event.clockOut)}
-                  </div>
-                )}
-                {visibleFields.payEstimate && (
-                  <div className="timeClockEvent__payEstimate">
-                    {calculatePay(event.clockIn, event.clockOut, event.payRate)}
-                  </div>
-                )}
-              </div>
-            ))
+    <>
+      <header style={{ marginBottom: 0 }}>
+        <Menu />
+      </header>
+      <main className="timeclock-main">
+        <div className="timeclock-container">
+          <h1 className="timeclock-title">Time Clock</h1>
+          {loading && <div className="loading">Loading shifts...</div>}
+          {error && (
+            <div className="error" style={{ color: "red" }}>
+              Error loading shifts: {error.message}
+            </div>
           )}
+
+          {/* ===== Top Controls ===== */}
+          <section className="timeclock-top-controls">
+            <input
+              className="timeclock-search"
+              type="text"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              placeholder="Search by name..."
+              aria-label="Search by name"
+            />
+            <div className="timeclock-field-filters">
+              {Object.keys(visibleFields).map((field) => (
+                <button
+                  key={field}
+                  className={`field-filter-btn ${visibleFields[field] ? 'active' : ''}`}
+                  onClick={() => toggleField(field)}
+                  aria-pressed={visibleFields[field]}
+                  type="button"
+                >
+                  {FIELD_LABELS[field]}
+                </button>
+              ))}
+            </div>
+          </section>
+
+          {/* ===== Table ===== */}
+          <div className="timeclock-table-section">
+            <div className="timeclock-table-wrapper">
+              <div className="timeclock-table">
+                {/* ===== Header Row ===== */}
+                <div className="timeclock-table-row timeclock-table-header">
+                  <div className="tc-col tc-name">Name</div>
+                  <div className="tc-col tc-date">Date</div>
+                  {visibleFields.location && <div className="tc-col tc-location">Location</div>}
+                  {visibleFields.position && <div className="tc-col tc-position">Position</div>}
+                  {visibleFields.shiftStart && <div className="tc-col tc-shiftstart">Shift Start</div>}
+                  <div className="tc-col tc-clockin">Clock In</div>
+                  <div className="tc-col tc-clockout">Clock Out</div>
+                  {visibleFields.shiftEnd && <div className="tc-col tc-shiftend">Shift End</div>}
+                  {visibleFields.duration && <div className="tc-col tc-duration">Duration</div>}
+                  {visibleFields.payEstimate && <div className="tc-col tc-payestimate">Pay Estimate</div>}
+                </div>
+                {(filteredShifts.length === 0 && !loading) && (
+                  <div className="timeclock-table-row timeclock-no-data">
+                    <div className="tc-col" style={{ flex: 10, textAlign: "center", color: "var(--color-secondary)" }}>
+                      No results found.
+                    </div>
+                  </div>
+                )}
+                {filteredShifts.map((shift, idx) => {
+                  console.log(shift); // 콘솔에서 실제 데이터를 확인할 수 있도록 추가!
+                  return (
+                    <div className="timeclock-table-row" key={shift.id || idx}>
+                      <div className="tc-col tc-name">
+                        {getEmployeeName(shift)}
+                      </div>
+                      <div className="tc-col tc-date">
+                        {getDate(shift)}
+                      </div>
+                      {visibleFields.location && (
+                        <div className="tc-col tc-location">{getLocation(shift)}</div>
+                      )}
+                      {visibleFields.position && (
+                        <div className="tc-col tc-position">{getPosition(shift)}</div>
+                      )}
+                      {visibleFields.shiftStart && (
+                        <div className="tc-col tc-shiftstart">{getTime(shift.shiftStart) || getTime(shift.start_time)}</div>
+                      )}
+                      <div className="tc-col tc-clockin">{getTime(shift.clockIn) || getTime(shift.start_time)}</div>
+                      <div className="tc-col tc-clockout">{getTime(shift.clockOut) || getTime(shift.end_time)}</div>
+                      {visibleFields.shiftEnd && (
+                        <div className="tc-col tc-shiftend">{getTime(shift.shiftEnd) || getTime(shift.end_time)}</div>
+                      )}
+                      {visibleFields.duration && (
+                        <div className="tc-col tc-duration">
+                          {calculateDuration(shift.start_time || shift.clockIn, shift.end_time || shift.clockOut)}
+                        </div>
+                      )}
+                      {visibleFields.payEstimate && (
+                        <div className="tc-col tc-payestimate">
+                          {calculatePay(
+                            shift.start_time || shift.clockIn,
+                            shift.end_time || shift.clockOut,
+                            shift.payRate || shift.employee?.payRate
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
         </div>
       </main>
-    </div>
+      <footer></footer>
+    </>
   );
-};
+}
 
-export default TimeClock;
+export default TimeClockPage;
