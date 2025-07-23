@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/static-recservices2/static/css/main.3fc306e3.css",
+    "main.js": "/static-recservices2/static/js/main.3461643a.js",
+    "index.html": "/static-recservices2/index.html",
+    "main.3fc306e3.css.map": "/static-recservices2/static/css/main.3fc306e3.css.map",
+    "main.3461643a.js.map": "/static-recservices2/static/js/main.3461643a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3fc306e3.css",
+    "static/js/main.3461643a.js"
+  ]
+}
