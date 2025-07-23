@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+    <meta name="description" content="The home page for time management application">
+    <link rel="stylesheet" href="../css/siteStyle.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons -->
+    <link rel="stylesheet" href="../css/media.css" />
+  </head>
+<body>
+  <header>
+    <nav>
+      <!-- Nav -->
+      <button id="menu-toggle" class="menu-button">
+        <span class="material-icons">menu</span>
+      </button>
+      <div id="menu-container"></div> 
+    </nav>
+  </header>
+  <main>
+    <!-- Main content of the page -->
+    <!-- Contains announcements/notifications, Employee list (for Managers/Coordinators), etc [See Sling as example] -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard</title>
+  <meta name="description" content="The home page for time management application">
+  <link rel="stylesheet" href="../css/siteStyle.css" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons -->
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div id="menu-container"></div>
+    </nav>
+  </header>
+  <!-- Main content of the page -->
+  <!-- Contains announcements/notifications, Employee list (for Managers/Coordinators), etc [See Sling as example] -->
+  <main class="dashboard-main">
+    <div class="dashboard-grid">
+      <!-- Left section: Quick actions + employee list -->
+      <div class="left-section">
+        <div class="quick-actions">
+          <div class="action-card"><span class="material-icons">notifications</span></div>
+          <div class="action-card"><span class="material-icons">schedule</span></div>
+          <div class="action-card"><span class="material-icons">calendar_today</span></div>
+          <div class="action-card"><span class="material-icons">add</span></div>
+        </div>
+
+        <div class="employee-list">
+          <div class="employee-row header">
+            <div class="col checkbox"><input type="checkbox" disabled /></div>
+            <div class="col name">Name</div>
+            <div class="col status">Status</div>
+            <div class="col toggle">Toggle</div>
+          </div>
+
+          <div class="employee-row">
+            <div class="col checkbox"><input type="checkbox" /></div>
+            <div class="col name">John Doe</div>
+            <div class="col status">Working</div>
+            <div class="col toggle">
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="employee-row">
+            <div class="col checkbox"><input type="checkbox" /></div>
+            <div class="col name">Jane Smith</div>
+            <div class="col status">Off</div>
+            <div class="col toggle">
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right section: Shift cards -->
+      <div class="right-section">
+        <div class="shift-card">
+          <h3>Employee Shift</h3>
+          <div class="card-content">
+            <span class="material-icons">person</span>
+            <p>Employee Name</p>
+          </div>
+        </div>
+        <div class="shift-card">
+          <h3>Employee Shift available or needed covered</h3>
+          <div class="card-content">
+            <span class="material-icons">person_outline</span>
+            <p>Open Shift</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <!-- Add footer items here -->
+  </footer>
+</body>
+<script src="../js/menu.js"></script>
+</html>

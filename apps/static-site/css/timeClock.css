@@ -1,0 +1,118 @@
+.employee {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+.employee:hover {
+  background-color: #f5faff;
+}
+
+.employee__summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e9ecf1;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-left: 5px solid var(--color-primary);
+  cursor: pointer;
+}
+
+.employee__name {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.dropdown {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: auto;
+  color: var(--color-primary);
+}
+
+.timeClockEvents.hide {
+  display: none;
+}
+
+#columnHeaders {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: bold;
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc;
+  text-align: center;
+}
+
+.timeClockEvent {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 10px 0;
+}
+
+.timeClockEvent > * {
+  padding: 10px 5px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.timeClockEvent__duration {
+  font-weight: bold;
+}
+.timeClockEvent__duration.red {
+  color: red;
+}
+
+
+#TimeClockFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 1rem 0;
+}
+
+#TimeClockFilters label {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.timeClockFilter {
+  cursor: pointer;
+}
+
+#columnHeaders,
+.timeClockEvent {
+  padding: 0 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.timeClockEvent > *:last-child,
+#columnHeaders > *:last-child {
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .timeClockEvent,
+  #columnHeaders {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 0.85rem;
+  }
+
+  .employee__summary {
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

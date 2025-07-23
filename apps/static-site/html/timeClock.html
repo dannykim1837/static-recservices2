@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Time Clock</title>
+  <meta name="description" content="Time Clock page for time management application">
+  <link rel="stylesheet" href="../css/siteStyle.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons -->
+  <link rel="stylesheet" href="../css/timeClock.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div id="menu-container"></div>
+    </nav>
+  </header>
+  <main>
+    <!-- Main content of the page -->
+
+    <h1>Filters</h1>
+    <div id="TimeClockFilters">
+      <!-- Always show name, date, clockIn, clockOut (not togglable) -->
+      <label>Shift Start<input type="checkbox" class="timeClockFilter"
+          value="timeClockEvent__shiftStart"></input></label>
+      <label>Shift End<input type="checkbox" class="timeClockFilter" value="timeClockEvent__shiftEnd"></input></label>
+      <label>Location<input type="checkbox" class="timeClockFilter" value="timeClockEvent__location"></input></label>
+      <label>Position<input type="checkbox" class="timeClockFilter" value="timeClockEvent__position"></input></label>
+      <label>Duration<input type="checkbox" class="timeClockFilter" value="timeClockEvent__duration"></input></label>
+      <label>Pay Estimate<input type="checkbox" class="timeClockFilter"
+          value="timeClockEvent__payEstimate"></input></label>
+    </div>
+
+    <!-- Column headers, in same order as elements in createTimeClockEvent() -->
+    <div id="columnHeaders">
+      <h3 class="timeClockEvent__employeeName timeClockEvent__header">Name</h3>
+      <h3 class="timeClockEvent__date timeClockEvent__header">Date</h3>
+      <h3 class="timeClockEvent__location timeClockEvent__header">Location</h3>
+      <h3 class="timeClockEvent__position timeClockEvent__header">Position</h3>
+      <h3 class="timeClockEvent__shiftStart timeClockEvent__header">Shift Start</h3>
+      <h3 class="timeClockEvent__clockIn timeClockEvent__header">Clock In</h3>
+      <h3 class="timeClockEvent__clockOut timeClockEvent__header">Clock Out</h3>
+      <h3 class="timeClockEvent__shiftEnd timeClockEvent__header">Shift End</h3>
+      <h3 class="timeClockEvent__duration timeClockEvent__header">Duration</h3>
+      <h3 class="timeClockEvent__payEstimate timeClockEvent__header">Pay Estimate</h3>
+    </div>
+
+    <!-- Where all Employee data is shown -->
+    <div id="employeeList"></div>
+  </main>
+  <footer>
+    <!-- Add footer items here -->
+  </footer>
+</body>
+<script src="../js/menu.js"></script>
+<script src="../js/timeClock.js"></script>
+
+</html>

@@ -1,0 +1,37 @@
+DRAFT
+
+About this document. In the ninth week of the course, the BE team found itself stuck on how to code the backend to connect to the DB for the project.
+
+There was a presumption that it was the DB teams job to provide the interface, but maybe they were also a little stuck. I asked online for what it ought
+to look like, collaboration, and this is what it said, below. It makes a whole lot of sense. I give us all grace because we all just really didn't know.
+
+In hindsight, if we knew that we ought to collaborate like this, I really believe we would have progressed further. I think also, that, as mentioned by others
+that in the real world it really does take time for teams that have never worked together to jive, and given that we are all new to much of this, it is
+realistic that it took some time for some realizations to come about. We are braver and bolder than in the beginning and able to ask comfortably, more
+questions. Anyway, I felt I needed to get this down here so as to hopefully help future teams collaborate better, earlier. 
+
+I was afraid of overstepping my role, but the model I received had obvious flaws that would make for more work if I had to change the tables in the future.
+I am grateful for the DB team lead, for having the conversation about the issues so I could at least feel OK with making some changes. If we all understood
+from the beginning, that we needed to each take time to evaluate the tables (naming conventions were a huge issue) and other details up front. It probably
+would have been resolved into a better model early on, at least for testing sooner than later.
+
+I might add more later, but maybe not, but hopefully this is still helpful. Now, back to coding the backend!
+
+How Does DB Design Typically Work in Production Teams?
+
+In a professional setting, database and backend teams collaborate closely but work independently. Here’s a typical workflow:
+
+a) Collaboration on Schema Design
+The database team designs the schema and shares a draft (often an ERD or SQL script).
+The backend team reviews it and requests changes if needed.
+They finalize a schema version and agree on naming conventions.
+b) Backend Developers Use Migrations
+Instead of waiting for a fully built database, the backend team creates Knex migrations (or equivalent in other ORMs).
+This ensures version control over database changes.
+c) API & Schema Versioning
+In production, database changes must be backwards-compatible with API endpoints.
+Example: If a column is renamed, the API should still support the old name for a while using an alias or transformation.
+d) Separate Database Environments
+Local: Each developer runs their own MySQL instance.
+Staging: A shared cloud database for integration testing.
+Production: The final MySQL database, managed securely.

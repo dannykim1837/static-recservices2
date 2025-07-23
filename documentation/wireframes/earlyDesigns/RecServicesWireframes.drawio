@@ -1,0 +1,158 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="24.7.17" pages="6">
+  <diagram name="Login" id="F5Xb02MLRLQqXkQi4kVQ">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GOqvMYlXAZzSb7BW_kPb-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="280" width="359" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="GOqvMYlXAZzSb7BW_kPb-2" value="Login Page&lt;div&gt;Allows users to login using their credentials or create a new account (redirects to Register page)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="20" width="225" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="GOqvMYlXAZzSb7BW_kPb-3" value="Web size/format&lt;div&gt;(360 x 800)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-690" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GOqvMYlXAZzSb7BW_kPb-4" value="Small (Tablet) size&lt;div&gt;(768 x 1024)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="9" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GOqvMYlXAZzSb7BW_kPb-5" value="Large size&lt;div&gt;(1920 x 1080)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GOqvMYlXAZzSb7BW_kPb-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-320" y="280" width="768" height="1024" as="geometry" />
+        </mxCell>
+        <mxCell id="GOqvMYlXAZzSb7BW_kPb-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="280" width="1919" height="1080" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="IBILCh97-d7qptqqaZhh" name="Register">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RT9Apw0e2fSP5d6s4Gwi-1" value="Registration Page&lt;div&gt;Allows an unregistered user to create a new account. Must provide an email account and a password (backend determines complexity/requirements, database checks if account exists)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="20" width="225" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="SjaOZNpOtqe96-vd9zB_-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="280" width="359" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="SjaOZNpOtqe96-vd9zB_-2" value="Web size/format&lt;div&gt;(360 x 800)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-690" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SjaOZNpOtqe96-vd9zB_-3" value="Small (Tablet) size&lt;div&gt;(768 x 1024)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="9" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SjaOZNpOtqe96-vd9zB_-4" value="Large size&lt;div&gt;(1920 x 1080)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SjaOZNpOtqe96-vd9zB_-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-320" y="280" width="768" height="1024" as="geometry" />
+        </mxCell>
+        <mxCell id="SjaOZNpOtqe96-vd9zB_-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="280" width="1919" height="1080" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="E-4PFj_T_Sal4Wr2xRIJ" name="Home - Employee">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Di5ExKRiboIaVl9MxUQn-1" value="Home - Employee&lt;div&gt;This is the main page an Employee will see after logging in&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="20" width="225" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="pvQYUJWu5LdtWxAP43kt-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="280" width="359" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="pvQYUJWu5LdtWxAP43kt-2" value="Web size/format&lt;div&gt;(360 x 800)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-690" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pvQYUJWu5LdtWxAP43kt-3" value="Small (Tablet) size&lt;div&gt;(768 x 1024)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="9" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pvQYUJWu5LdtWxAP43kt-4" value="Large size&lt;div&gt;(1920 x 1080)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pvQYUJWu5LdtWxAP43kt-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-320" y="280" width="768" height="1024" as="geometry" />
+        </mxCell>
+        <mxCell id="pvQYUJWu5LdtWxAP43kt-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="280" width="1919" height="1080" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Home - Boss" id="z4oGfHvYGfm97VhshVz_">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="qxB5mDIDVJEgO-3Ldu9h-0" />
+        <mxCell id="qxB5mDIDVJEgO-3Ldu9h-1" parent="qxB5mDIDVJEgO-3Ldu9h-0" />
+        <mxCell id="qxB5mDIDVJEgO-3Ldu9h-2" value="Home - Boss&lt;div&gt;This is the main page a Boss will see after logging in&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="qxB5mDIDVJEgO-3Ldu9h-1" vertex="1">
+          <mxGeometry x="310" y="20" width="225" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="wd9IC7_9vHF3DAtkWt3N-0" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="qxB5mDIDVJEgO-3Ldu9h-1">
+          <mxGeometry x="-800" y="280" width="359" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="wd9IC7_9vHF3DAtkWt3N-1" value="Web size/format&lt;div&gt;(360 x 800)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="qxB5mDIDVJEgO-3Ldu9h-1">
+          <mxGeometry x="-690" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wd9IC7_9vHF3DAtkWt3N-2" value="Small (Tablet) size&lt;div&gt;(768 x 1024)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="qxB5mDIDVJEgO-3Ldu9h-1">
+          <mxGeometry x="9" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wd9IC7_9vHF3DAtkWt3N-3" value="Large size&lt;div&gt;(1920 x 1080)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="qxB5mDIDVJEgO-3Ldu9h-1">
+          <mxGeometry x="640" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wd9IC7_9vHF3DAtkWt3N-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="qxB5mDIDVJEgO-3Ldu9h-1">
+          <mxGeometry x="-320" y="280" width="768" height="1024" as="geometry" />
+        </mxCell>
+        <mxCell id="wd9IC7_9vHF3DAtkWt3N-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="qxB5mDIDVJEgO-3Ldu9h-1">
+          <mxGeometry x="560" y="280" width="1919" height="1080" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="GA9OGWpaLlfea7CgHh6y" name="Home - Admin">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BPfUOPVwnOyiOkqRXrLD-1" value="Home - Admin&lt;div&gt;This is the main page an Admin will see after logging in&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="20" width="225" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="yZp8x_cpdSR0K392jVm4-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="280" width="359" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="yZp8x_cpdSR0K392jVm4-2" value="Web size/format&lt;div&gt;(360 x 800)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-690" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yZp8x_cpdSR0K392jVm4-3" value="Small (Tablet) size&lt;div&gt;(768 x 1024)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="9" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yZp8x_cpdSR0K392jVm4-4" value="Large size&lt;div&gt;(1920 x 1080)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yZp8x_cpdSR0K392jVm4-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-320" y="280" width="768" height="1024" as="geometry" />
+        </mxCell>
+        <mxCell id="yZp8x_cpdSR0K392jVm4-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="280" width="1919" height="1080" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="oyLT--bFwWLUeaSnXPnn" name="Home - Unregistered">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_0J0vp6keJawFwJSOyO8-1" value="Could just be the login page, we might not need to have a home page if this is only for backend users/not for customers to view (ask Rec Services for requirements)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;All pages redirect here if there isn&#39;t a login cookie/user is not logged in&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="310" width="225" height="180" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

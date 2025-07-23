@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Profile</title>
+    <meta name="description" content="User Profile page for time management application">
+    <link rel="stylesheet" href="../css/siteStyle.css" />
+    <link rel="stylesheet" href="../css/userProfile.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons -->
+  </head>
+<body>
+  <header>
+      <nav>
+        <div id="menu-container"></div>
+      </nav>
+  </header>
+  <main>
+    <form id="userForm">
+      <h1>
+        Profile
+      </h1>
+      <fieldset id="profile">
+        <img src="" id="userPicture">
+        <div class="profileData">
+          <label>First Name
+            <input type="text" id="firstName" name="first__name" required>
+          </label>
+          <label>Last Name
+            <input type="text" id="lastName" name="last__name" required>
+          </label>
+          <label id="emailAddress">Email Address
+            <input type="email" id="email" name="email" required>
+          </label>
+          <label id="countryCode">Country Code
+            <input type="text" id="countryCodeInput" name="country__code">
+          </label>
+          <label id="phone">Phone Number
+            <input type="text" id="phoneNumber" name="phone__number">
+          </label>
+        </div>
+      </fieldset>
+
+  </main>
+  <footer>
+    <!-- Add footer items here -->
+  </footer>
+</body>
+<script src="../js/menu.js"></script>
+<script src="../js/userProfile.js"></script>
+</html>

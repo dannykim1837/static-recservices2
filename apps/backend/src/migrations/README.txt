@@ -1,0 +1,1 @@
+This folder is no longer necessary, but we will keep it here for now

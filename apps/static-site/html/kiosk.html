@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kiosk</title> <!-- Page title -->
+    <meta name="description" content="Page to clock-in and clock-out of scheduled shifts"> <!-- Page description -->
+    <link rel="stylesheet" href="../css/siteStyle.css" /> <!-- Site style sheet -->
+    <link rel="stylesheet" href="../css/kiosk.css" /> <!-- Page-specific stylesheet(s) -->
+</head>
+
+<body>
+    <header>
+        <!-- Could add a nav header for external pages (index.html, login.html, kiosk.html)-->
+    </header>
+    <main>
+        <!-- Main content of the page -->
+        <div id="pinpad-area">
+            <input type="password" id="pinpad-input" maxlength="4" autofocus></input>
+            <div id="keypad">
+                <div class="pinpad-row">
+                    <button type="button" class="pinpad-btn" value="1">1</button>
+                    <button type="button" class="pinpad-btn" value="2">2</button>
+                    <button type="button" class="pinpad-btn" value="3">3</button>
+                </div>
+                <div class="pinpad-row">
+                    <button type="button" class="pinpad-btn" value="4">4</button>
+                    <button type="button" class="pinpad-btn" value="5">5</button>
+                    <button type="button" class="pinpad-btn" value="6">6</button>
+                </div>
+                <div class="pinpad-row">
+                    <button type="button" class="pinpad-btn" value="7">7</button>
+                    <button type="button" class="pinpad-btn" value="8">8</button>
+                    <button type="button" class="pinpad-btn" value="9">9</button>
+                </div>
+                <div class="pinpad-row">
+                    <button type="button" class="pinpad-btn" id="delete-btn" value="del">Del</button>
+                    <button type="button" class="pinpad-btn" value="0">0</button>
+                    <button type="button" class="pinpad-btn" id="submit-btn" value="ok">Ok</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Add footer items here -->
+    </footer>
+</body>
+<script src="../js/kiosk.js"></script>
+
+</html>

@@ -1,0 +1,298 @@
+:root {
+  --color-primary: #0279e9;
+  --color-secondary: #98a2af;
+  --color-background: #f2f5f7;
+  --color-on-primary: #ffffff;
+  --color-on-secondary: #0279e9;
+  --color-on-background: #98a2af;
+  --button-color: var(--color-primary);
+  --hover-button-color: var(--color-secondary);
+  --color-error-text: red;
+  --small-spacing: 5px;
+  --medium-spacing: 10px;
+  --large-spacing: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* ===== Layout: Main Container ===== */
+.calendar-main {
+  max-width: 1200px;
+  min-height: 100vh;
+  background: var(--color-on-primary);
+  margin: 0 auto;
+  padding: 48px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Week Box ===== */
+.calendar__box__week {
+  width: 100%;
+  margin: 32px auto 2rem auto;
+  padding: 32px 0;
+  background: var(--color-background);
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+  overflow-x: auto;
+  border: 1.7px solid var(--color-on-background);
+  transition: box-shadow 0.16s, background 0.13s;
+}
+
+/* ===== Table Outer Scroll ===== */
+.calendar-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  background: transparent;
+}
+
+/* ===== Week Bar & Nav ===== */
+.week-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* ======= 구분선 (헤더 위/아래) ======= */
+.calendar-header-divider {
+  width: 100%;
+  height: 0;
+  border-top: 2.5px solid var(--color-on-background);
+  margin-bottom: 0.7em;
+  margin-top: 0.5em;
+}
+
+.time-header-divider {
+  width: 100%;
+  height: 0;
+  border-top: 2.5px solid var(--color-on-background);
+  margin-bottom: 0.2em;
+}
+
+/* ===== Week Nav & Day Buttons ===== */
+.week-nav-btn {
+  background: var(--color-on-primary);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem 0.85rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+}
+.week-nav-btn:hover {
+  color: var(--color-primary);
+  background: #e3eaf6;
+}
+
+.day-button {
+  background: var(--color-on-primary);
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+  margin-right: 0.2rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.day-button.selected,
+.day-button:hover {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-color: var(--color-primary);
+}
+
+/* ===== Title & FAB ===== */
+h1 {
+  font-size: 2.15rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 0.7em;
+}
+
+.fab-create-shift {
+  margin: 1.5rem 0;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.fab-create-shift:hover {
+  background: #1251a3;
+}
+
+/* ===== Week Grid (Main Calendar Grid) ===== */
+.day__view {
+  display: grid;
+  grid-template-columns: 190px repeat(24, 90px);
+  overflow-x: auto;
+  white-space: nowrap;
+  grid-template-rows: 48px repeat(var(--employee-count, 10), minmax(54px, 1fr));
+  font-size: 1rem;
+  background: transparent;
+  border-top: 2px solid var(--color-on-background);   /* 시간 row 위 */
+  border-bottom: 2.5px solid var(--color-on-background); /* 테이블 하단 구분 */
+}
+
+/* ===== Employee Name Cell ===== */
+.employee-name-cell {
+  grid-column: 1;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-on-primary);
+  padding-left: 18px;
+  padding-right: 15px;
+  min-width: 150px;
+  max-width: 220px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-right: 2px solid var(--color-on-background);
+  border-bottom: 1.1px solid var(--color-on-background);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 1.08em;
+  position: relative;
+  z-index: 2;
+}
+.employee-name-cell.calendar-header {
+  background: var(--color-background);
+  color: var(--color-secondary);
+  font-weight: bold;
+  font-size: 1.08em;
+  padding-left: 20px;
+  border-right: 2.5px solid var(--color-on-background);
+  border-top: none;
+  border-bottom: 2.5px solid var(--color-on-background);
+}
+
+/* ===== 시간 헤더 각 시간 ===== */
+.calendar-header {
+  background: var(--color-background);
+  font-weight: 600;
+  color: var(--color-on-background);
+  text-align: center;
+  border-bottom: 2px solid var(--color-on-background);
+  border-top: none;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* ===== 직원별 Row에 구분선 ===== */
+.employee-row {
+  border-bottom: 1.1px solid var(--color-on-background);
+}
+
+/* ===== Shift Box ===== */
+.shift-box {
+  background-color: var(--color-secondary);
+  border: 1.1px solid var(--color-primary);
+  border-radius: 6px;
+  padding: 6px 8px;
+  color: var(--color-on-primary);
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  min-width: 75px;
+  transition: background 0.12s;
+  word-break: break-all;
+}
+.shift-box:hover {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* ===== Popup Styles ===== */
+.window,
+.event__details,
+.popup {
+  z-index: 99;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .calendar-main {
+    padding: 22px 6px;
+  }
+  .calendar__box__week {
+    padding: 8px 3px;
+  }
+  .day__view {
+    grid-template-columns: 120px repeat(24, 52px);
+    font-size: 0.93rem;
+  }
+  .employee-name-cell,
+  .employee-name-cell.calendar-header {
+    min-width: 62px;
+    max-width: 120px;
+    font-size: 0.93em;
+    padding-left: 7px;
+  }
+}
+
+@media (max-width: 600px) {
+  .calendar-main {
+    padding: 7px 2px;
+  }
+  .calendar__box__week {
+    padding: 3px 1px;
+  }
+  .week-bar-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .day__view {
+    grid-template-columns: 65px repeat(24, 35px);
+    font-size: 0.82rem;
+  }
+  .employee-name-cell,
+  .employee-name-cell.calendar-header {
+    min-width: 40px;
+    max-width: 68px;
+    font-size: 0.85em;
+    padding-left: 2px;
+  }
+  .fab-create-shift {
+    width: 46px;
+    height: 46px;
+    font-size: 1.3rem;
+  }
+
+  nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    margin-bottom: 18px;
+  }
+
+  .menu-text {
+    display: none;
+  }
+
+}

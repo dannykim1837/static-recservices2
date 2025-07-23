@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rec Services Calendar</title>
+  <meta name="description" content="Page where employee can see their shift and bosses can updated employee workload">
+  <link rel="stylesheet" href="../css/siteStyle.css" /> <!-- Site style sheet -->
+  <link rel="stylesheet" href="../css/calendar.css" /> <!-- Page-specific stylesheet -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons -->
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div id="menu-container"></div>
+    </nav>
+  </header>
+  <main>
+    <h1>
+      Employee Calendar
+    </h1>
+    <div id="popupCreate" class="window">
+      <div class="event__details">
+        <h2>Create New Event</h2>
+        <span class="close">&times;</span>
+        <label>Date</label><input type="date" id="setDate"><br>
+        <label>Name</label><input type="text" id="setName"><br>
+        <label>Description</label><input type="text" id="setDescription"><br>
+        <label>Start</label><input type="time" id="setStartTime"><br>
+        <label>End</label><input type="time" id="setEndTime"><br>
+        <button id="setEventButton">Set</button><br>
+      </div>
+    </div>
+
+    <div id="popup" class="window">
+      <div class="event__details">
+        <span class="close">&times;</span>
+        <h4 id="title">
+          Service
+        </h4>
+        <p id="subtitle" class="subtitle">Swimming Pool</p>
+        <p id="description">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        </p>
+
+      </div>
+    </div>
+    <button id="createEventButton">+ Create New Event</button>
+    <section class="calendar__box__week">
+
+      <section class="week__view">
+        <section class="calendar">
+          <button id="prev__week" class="week__nav">&#9664 Previous Week</button>
+          <h2 id="current__week">Week - Week</h2>
+          <button id="next__week" class="week__nav">Next Week &#9654</button>
+        </section>
+
+        <div id="zero" class="week__day"></div>
+        <div id="I" class="week__day">Sun</div>
+        <div id="II" class="week__day">Mon</div>
+        <div id="III" class="week__day">Tue</div>
+        <div id="IV" class="week__day">Wed</div>
+        <div id="V" class="week__day">Thu</div>
+        <div id="VI" class="week__day">Fri</div>
+        <div id="VII" class="week__day">Sat</div>
+
+
+        <div class="day__time">07:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="day__time">08:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="day__time">09:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="day__time">10:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="day__time">11:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="day__time">12:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="day__time">13:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="day__time">14:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="day__time">15:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="day__time">16:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="day__time">17:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="day__time">18:00</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+      </section>
+    </section>
+    <section class="calendar__box__day">
+      <section class="daily__view">
+
+        <section class="calendar">
+          <button id="prev__day" class="day__nav">&#9664 Previous</button>
+          <h2 class="current__day__month">day of the week</h2>
+          <button id="next__day" class="day__nav">Next &#9654</button>
+        </section>
+
+        <div class="day__time">07:00</div>
+        <div class="cell"></div>
+
+        <div class="day__time">08:00</div>
+        <div class="cell"></div>
+
+        <div class="day__time">09:00</div>
+        <div class="cell"></div>
+
+        <div class="day__time">10:00</div>
+        <div class="cell"></div>
+
+        <div class="day__time">11:00</div>
+        <div class="cell"></div>
+
+        <div class="day__time">12:00</div>
+        <div class="cell"></div>
+
+        <div class="day__time">13:00</div>
+        <div class="cell"></div>
+
+        <div class="day__time">14:00</div>
+        <div class="cell"></div>
+
+        <div class="day__time">15:00</div>
+        <div class="cell"></div>
+
+        <div class="day__time">16:00</div>
+        <div class="cell"></div>
+
+        <div class="day__time">17:00</div>
+        <div class="cell"></div>
+
+        <div class="day__time">18:00</div>
+        <div class="cell"></div>
+
+
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer>
+    <!-- Add footer items here -->
+  </footer>
+  <script src="../js/calendar.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
+
+</html>

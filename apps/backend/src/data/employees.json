@@ -1,0 +1,161 @@
+{
+  "employees": [
+    {
+      "Employee_ID": "E001",
+      "First": "John",
+      "Last": "Doe",
+      "Position": "Manager",
+      "Location": "New York",
+      "Group": "Administration",
+      "Email": "john.doe@example.com",
+      "Phone": "123-456-7890",
+      "Wage": 30.5,
+      "Salary": 65000
+    },
+    {
+      "Employee_ID": "E002",
+      "First": "Jane",
+      "Last": "Smith",
+      "Position": "Assistant Manager",
+      "Location": "New York",
+      "Group": "Administration",
+      "Email": "jane.smith@example.com",
+      "Phone": "234-567-8901",
+      "Wage": 28,
+      "Salary": 60000
+    },
+    {
+      "Employee_ID": "E003",
+      "First": "Michael",
+      "Last": "Johnson",
+      "Position": "Cashier",
+      "Location": "Los Angeles",
+      "Group": "Operations",
+      "Email": "michael.johnson@example.com",
+      "Phone": "345-678-9012",
+      "Wage": 18,
+      "Salary": 37500
+    },
+    {
+      "Employee_ID": "E004",
+      "First": "Emily",
+      "Last": "Davis",
+      "Position": "Shift Supervisor",
+      "Location": "Chicago",
+      "Group": "Operations",
+      "Email": "emily.davis@example.com",
+      "Phone": "456-789-0123",
+      "Wage": 22.5,
+      "Salary": 47000
+    },
+    {
+      "Employee_ID": "E005",
+      "First": "Chris",
+      "Last": "Wilson",
+      "Position": "Sales Associate",
+      "Location": "Miami",
+      "Group": "Sales",
+      "Email": "chris.wilson@example.com",
+      "Phone": "567-890-1234",
+      "Wage": 20,
+      "Salary": 42000
+    },
+    {
+      "Employee_ID": "E006",
+      "First": "Sarah",
+      "Last": "Brown",
+      "Position": "HR Coordinator",
+      "Location": "New York",
+      "Group": "Human Resources",
+      "Email": "sarah.brown@example.com",
+      "Phone": "678-901-2345",
+      "Wage": 25,
+      "Salary": 55000
+    },
+    {
+      "Employee_ID": "E008",
+      "First": "Anna",
+      "Last": "Garcia",
+      "Position": "Receptionist",
+      "Location": "San Francisco",
+      "Group": "Front Desk",
+      "Email": "anna.garcia@example.com",
+      "Phone": "890-123-4567",
+      "Wage": 17.5,
+      "Salary": 36000
+    },
+    {
+      "First": "ff",
+      "Last": "aa",
+      "Position": "Receptionist",
+      "Location": "San Francisco",
+      "Group": "Front Desk",
+      "Email": "anna.garcia@example.com",
+      "Phone": "890-123-4567",
+      "Wage": 17.5,
+      "Salary": 36000,
+      "id": 7164187,
+      "Employee_ID": "J-GyxHR"
+    },
+    {
+      "First": "ff",
+      "Last": "aa",
+      "Position": "Receptionist",
+      "Location": "San Francisco",
+      "Group": "Front Desk",
+      "Email": "anna.garcia@example.com",
+      "Phone": "890-123-4567",
+      "Wage": 17.5,
+      "Salary": 36000,
+      "Employee_ID": "dCWyij-"
+    },
+    {
+      "First": "ff",
+      "Last": "aa",
+      "Position": "Receptionist",
+      "Location": "San Francisco",
+      "Group": "Front Desk",
+      "Email": "anna.garcia@example.com",
+      "Phone": "890-123-4567",
+      "Wage": 17.5,
+      "Salary": 3600,
+      "Employee_ID": "8sWGfQk"
+    },
+    {
+      "Employee_ID": "E009",
+      "First": "Alice",
+      "Last": "Williams",
+      "Position": "Accountant",
+      "Location": "Boston",
+      "Group": "Accountant",
+      "Email": "alice.williams@example.com",
+      "Phone": "901-234-5678",
+      "Wage": 27,
+      "Salary": 58000
+    },
+    {
+      "Employee_ID": "E036",
+      "First": "John",
+      "Last": "Doe",
+      "Position": "Software Engineer",
+      "Location": "Seattle, WA",
+      "Group": "Engineering",
+      "Email": "john.doe@example.com",
+      "Phone": "312-456-7890",
+      "Wage": 40,
+      "Salary": 83000
+    },
+    {
+      "Employee_ID": "E025",
+      "First": "John",
+      "Last": "Doe",
+      "Position": "Manager",
+      "Location": "New York",
+      "Group": "Administration",
+      "Email": "john.doe1@example.com",
+      "Phone": "123-456-7890",
+      "Wage": 30.5,
+      "Salary": 65000
+    }
+  ]
+}

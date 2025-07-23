@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Event</title>
+    <meta name="description" content="Page where new events can be created">
+    <link rel="stylesheet" href="../css/siteStyle.css" />
+    <link rel="stylesheet" href="../css/loginStyle.css" />
+    <link rel="stylesheet" href="../css/createEvent.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="menu-container"></div>
+        </nav>
+    </header>
+    <main>
+        <!-- Main content of the page -->
+        <section id="newEvent">
+
+            <!-- Add url to action tag -->
+            <form id="createCustomEvent" action="">
+                <!-- ToDo: Sling has toggles at the top to show/hide form sections (repeat, notes, tags, etc) -->
+
+                <h2>Create Event</h2>
+
+                <div id="createCustomEvent__fields">
+                    <!-- ToDo: Are names and values submitted as json/dictionary with HTTP request? Some items may need to be checked before submitting -->
+                    <!-- ToDo: Modify to better use grid, with labels in one column and inputs in the other -->
+
+                    <!-- Title and Description -->
+                    <label>Title</label>
+                    <input name="eventTitle" type="text"></input>
+                    <label>Description</label>
+                    <input name="eventTitle" type="text"></input>
+
+                    <!-- The day the event takes place -->
+                    <label>Date</label>
+                    <input name="eventDate" type="date"></input>
+
+                    <!-- Start and end times for an event -->
+                    <label>Time Start</label>
+                    <input name="timeStart" type="time"></input>
+                    <label>Time End</label>
+                    <input name="timeEnd" type="time"></input>
+
+                    <!-- Repeat not used for now
+                    <label>Repeat Duration</label>
+                    How often the event is repeated, on a daily/weekly basis
+                    <select name="repeatDuration" id="newEventRepeatDuration">
+                        <option value="day">Daily</option>
+                        <option value="week">Weekly</option>
+                        <option value="custom">Custom</option>
+                        ToDo: Could hide more specific repeat options until this is picked?
+                    </select>
+                    <label>Repeat Day of week</label>
+                    <select name="repeatDOW" id="newEventRepeatDOW">
+                        ToDo: Make each a radio select, can pick multiple
+                        <option value="sunday">Sun</option>
+                        <option value="monday">Mon</option>
+                        <option value="tuesday">Tue</option>
+                        <option value="wednesday">Wed</option>
+                        <option value="thursday">Thur</option>
+                        <option value="friday">Fri</option>
+                        <option value="satday">Sat</option>
+                    </select>
+                    <label>Repeat Start</label>
+                    Start and end dates for the event to repeat
+                    <input name="eventRepeatStartDate" type="date"></input>
+                    <label>Repeat End</label>
+                    <input name="eventRepeatEndDate" type="date"></input>
+                    -->
+
+                    <!-- Employees and positions working this event/shift -->
+                     <!-- TODO: Get list of options from backend, create <option> items -->
+                    <label>Position</label>
+                    <select name="position" id="newEventPositions"></select>
+                    <label>Employee</label>
+                    <select name="employees" id="newEventEmployees"></select>
+
+                    <!-- Tags to identify the type of event -->
+                    <label>Tags</label>
+                    <select name="tags" id="newEventTags"></select>
+
+                </div>
+                <!-- Defaultly published, no "hidden"/"unpublished" events for now
+                <div>
+                    Publish<input type="checkbox"></input>
+                </div>
+                -->
+
+                <div>
+                    <button id="closeNewEvent">Cancel</button>
+                    <button id="submitNewEvent">Save</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        <!-- Add footer items here -->
+    </footer>
+</body>
+<script src="../js/menu.js"></script>
+
+</html>

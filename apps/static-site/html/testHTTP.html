@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Settings</title>
+  <meta name="description" content="Settings page for time management application">
+  <link rel="stylesheet" href="../css/siteStyle.css" />
+  <link rel="stylesheet" href="../css/testHTTP.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons -->
+</head>
+
+<body>
+  <header>
+    <!-- <nav id="menu-container"> Move id to nav? -->
+    <nav>
+      <div id="menu-container"></div>
+    </nav>
+  </header>
+  <main>
+    <!-- REQUESTS -->
+    <!-- Building custom Requests using the input boxes-->
+    <div id="requests__custom">
+      <h2>Custom Inputs</h2>
+      <div id="customInputs">
+        <label>URL<input type="text" id="urlEnding"></input></label>
+        <label>HTTP Type<input type="text" id="httpType"></input></label>
+        <label>Body (JSON format)<input type="text" id="bodyJSON"></input></label>
+      </div>
+      <button onClick="sendCustomRequest();">Send Request</button>
+    </div>
+
+    <!-- OUTPUT -->
+    <div id="response__details">
+      <h2>Response</h2>
+      <div id="response__output"></div>
+    </div>
+    <textarea id="response__box" warp="hard"></textarea>
+
+    <hr>
+    <!-- Requests needed for the Application -->
+    <div id="request__application">
+      <h2>Application Requests</h2>
+      <!-- Test, maybe showed on Manager's Dashboard? --> <button onClick="sendEmployeeRequest();">Get all
+        Employees</button>
+      <!-- ToDo: Add requests per page, console.log -->
+
+      <h3>Login</h3>
+      <button onClick="">Login [add function to button's onClick]</button>
+      <button onClick="">Create Account [add function to button's onClick]</button>
+      <button onClick="">Reset Password [add function to button's onClick]</button>
+
+      <h3>Home / Announcements</h3>
+
+      <h3>Time Clock</h3>
+
+      <h3>Calendar</h3>
+
+      <h3>Create Event</h3>
+
+      <h3>Settings</h3>
+
+      <h3>User Profile</h3>
+
+    </div>
+
+    <hr>
+    <!-- Testing GET requests -->
+    <div id="requests__GET">
+      <h2>GET Requests</h2>
+      <button onClick="sendRequest('GET', 'employees', '')">Get all Employees</button>
+      <button onClick="sendRequest('GET', 'employees/27', '')">Get Employee with a specific id</button>
+    </div>
+
+    <!-- Testing POST requests -->
+    <div id="requests__POST">
+      <h2>POST Requests</h2>
+      <button onClick="sendRequest('POST', 'employees', '')">Add a new Employee - No body</button>
+    </div>
+  </main>
+  <footer>
+    <!-- Add footer items here -->
+  </footer>
+</body>
+<script src="../js/menu.js"></script> <!-- Add menu in the header -->
+<script src="../js/test.js"></script> <!-- TESTING! -->
+
+</html>

@@ -1,0 +1,164 @@
+.create-event-main {
+    max-width: 1200px;
+    min-height: 100vh;
+    background: var(--color-background);
+    margin: 0 auto;
+    padding: 48px 48px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-event-title {
+    width: 100%;
+    max-width: 600px;
+    color: var(--color-primary);
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.create-event-container {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 32px 40px 32px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+}
+
+.create-event-form label {
+    display: block;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.3rem;
+    margin-top: 1.25rem;
+}
+
+.create-event-form input,
+.create-event-form select {
+    width: 100%;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #f9f9fc;
+    color: #222;
+    transition: border-color 0.2s;
+}
+
+.create-event-form input:focus,
+.create-event-form select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.field-group {
+    flex: 1;
+    min-width: 140px;
+}
+
+.button-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+.cancel-btn,
+.save-btn {
+    flex: 1;
+    padding: 14px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.cancel-btn {
+    background: var(--color-on-background);
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 12px 0;
+    border-radius: 25px;
+    cursor: pointer;
+
+    /* Ensure text is always visible */
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    /* Remove any text indent or overflow hidden that can hide text */
+    text-indent: 0 !important;
+    overflow: visible !important;
+    white-space: normal !important;
+}
+
+.cancel-btn:hover {
+    background: var(--color-secondary);
+    color: var(--color-on-primary);
+    border-color: var(--color-secondary);
+}
+
+.save-btn {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+.save-btn:hover {
+    background: #0255c0;
+}
+
+.info-text {
+    margin-top: 1.5rem;
+    color: var(--color-secondary);
+    text-align: center;
+}
+
+.error-text {
+    margin-top: 0.5rem;
+    color: var(--color-error-text);
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .create-event-main {
+        padding: 24px 12px;
+    }
+
+    .create-event-container {
+        padding: 24px 24px 32px 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .create-event-main {
+        padding: 16px 8px;
+    }
+
+    .create-event-container {
+        padding: 16px 16px 24px 16px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .field-group {
+        min-width: 100%;
+    }
+}

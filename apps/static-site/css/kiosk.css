@@ -1,0 +1,54 @@
+/* Disallows selection on the entire page */
+:root {
+    -webkit-user-select: none;  /* Safari */
+    -ms-user-select: none;      /* IE 10 and IE 11 */
+    user-select: none;          /* Standard syntax */
+}
+
+/* The section of the page containing the PIN input and keypad */
+#pinpad-area {
+    justify-items: center;
+    padding: 10px;
+    width: 250px;
+}
+
+/* PIN input area */
+#pinpad-input {
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+
+    height: 1.5em;
+    font-size: 1.5em;
+    text-align: center;
+    width: 200px;
+}
+
+/* Remove colored outline */
+#pinpad-input:focus {
+    outline: none;
+}
+
+/* Keypad buttons organized into rows */
+.pinpad-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+/* Size of each button, coloring */
+.pinpad-btn {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+
+    color: black;
+    background-color: #e0e0e0;
+
+    margin: 2px;
+}
+
+/* Button color changes when mouse hovers over */
+.pinpad-btn:hover {
+    background-color: #afafaf;
+}

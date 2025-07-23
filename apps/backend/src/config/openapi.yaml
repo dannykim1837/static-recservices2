@@ -1,0 +1,143 @@
+openapi: 3.0.0
+info:
+  title: Rec Services API
+  description: API for managing employees and schedules
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080
+    description: Local Development Server
+
+paths:
+  /api/employees:
+    get:
+      summary: Get all employees
+      operationId: getEmployees
+      responses:
+        '200':
+          description: A list of employees
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+        '500':
+          description: Internal Server Error
+
+    post:
+      summary: Create a new employee
+      operationId: createEmployee
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '201':
+          description: Employee created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        '400':
+          description: Validation error
+
+  /api/employees/{id}:
+    get:
+      summary: Get a single employee by ID
+      operationId: getEmployeeById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Employee details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        '404':
+          description: Employee not found
+        '500':
+          description: Internal Server Error
+
+    put:
+      summary: Update an existing employee
+      operationId: updateEmployee
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Employee updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        '400':
+          description: Validation error
+        '404':
+          description: Employee not found
+
+    delete:
+      summary: Delete an employee
+      operationId: deleteEmployee
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Employee deleted successfully
+        '404':
+          description: Employee not found
+
+components:
+  schemas:
+    Employee:
+      type: object
+      properties:
+        Employee_ID:
+          type: string
+          example: "E009"
+        First:
+          type: string
+          example: "Alice"
+        Last:
+          type: string
+          example: "Williams"
+        Position:
+          type: string
+          example: "Accountant"
+        Location:
+          type: string
+          example: "Boston"
+        Email:
+          type: string
+          format: email
+          example: "alice.williams@example.com"
+        Phone:
+          type: string
+          example: "901-234-5678"
+        Wage:
+          type: number
+          example: 27
+        Salary:
+          type: number
+          example: 58000

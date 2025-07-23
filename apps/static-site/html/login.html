@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rec Services Login</title>
+    <meta name="description" content="Login to your account" />
+    <link rel="stylesheet" href="../css/siteStyle.css" />
+    <link rel="stylesheet" href="../css/loginStyle.css" />
+    <link rel="stylesheet" href="../css/media.css" />
+  </head>
+  <body>
+    <!-- ----------------------LOGIN-----------------------  -->
+    <section id="login-page">
+      <form method="post" class="bordered-form" id="login">
+        <h2>Login</h2>
+        <label for="username">Email/Username:</label><br />
+        <input
+          class="form-text-input"
+          type="text"
+          id="username"
+          name="username"
+          placeholder="test@mail.com"
+          required
+          autofocus
+          
+        /><br /><br />
+
+        <label for="pwd">Password</label><br />
+        <input
+          type="password"
+          class="form-text-input"
+          id="pwd"
+          name="pwd"
+          required
+          placeholder="********"
+        /><br />
+        <div class="password-container">
+          <label
+            ><input
+              class="show-password"
+              type="checkbox"
+              onclick="togglePasswordVisibility('pwd')"
+            />Show Password</label
+          >
+
+          <a
+            class="fake-link"
+            onclick="goToPage(originPage='login-page', navigateToPage='verification-page')"
+            >Forgot password?</a
+          >
+        </div>
+        <br /><br />
+
+        <input type="submit" value="Sign In" class="form-button" /><br />
+
+        <div class="center-text">
+          <a
+            class="fake-link"
+            onclick="goToPage(originPage='login-page', navigateToPage='registration-page')"
+            >Not a member? Sign up here!</a
+          >
+        </div>
+      </form>
+    </section>
+
+    <!-- ------------------REGISTRATION---------------------  -->
+
+    <section id="registration-page">
+      <div class="left-align-text">
+        <a
+          class="fake-link"
+          onclick="goToPage(originPage='registration-page', navigateToPage='login-page')"
+        >Back to Login</a>
+      </div>
+      <form method="post" class="bordered-form" id="registration">
+        <h2>Create an Account</h2>
+        <label for="fname">First Name*:</label>
+        <input
+          class="form-text-input"
+          required
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="John"
+        />
+        <br /><br />
+
+        <label for="lname">Last Name*:</label>
+        <input
+          class="form-text-input"
+          required
+          type="text"
+          id="lname"
+          name="lname"
+          placeholder="Smith"
+        />
+        <br /><br />
+
+        <label for="email">Email*:</label>
+        <input
+          class="form-text-input"
+          required
+          type="email"
+          id="email"
+          name="email"
+          placeholder="JohnSmith@email.com"
+        />
+        <br /><br />
+
+        <label for="username-reg">Username*:</label>
+        <input
+          class="form-text-input"
+          required
+          type="text"
+          id="username-reg"
+          name="username-reg"
+          placeholder="JohnSmith124"
+        />
+        <br /><br />
+
+        <label for="pwd-reg">Password*:</label>
+        <input
+          class="form-text-input"
+          required
+          type="password"
+          id="pwd-reg"
+          name="pwd-reg"
+          placeholder="********"
+          minlength="8"
+        />
+        <br />
+
+        <div class="password-container">
+          <label
+            ><input
+              class="show-password"
+              type="checkbox"
+              onclick="togglePasswordVisibility('pwd-reg')"
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"
+            />Show Password</label
+          >
+        </div>
+        <br />
+
+        <label for="confirm-pwd">Confirm Password*:</label>
+        <input
+          class="form-text-input"
+          required
+          type="password"
+          id="confirm-pwd"
+          name="confirm-pwd"
+          placeholder="********"
+        />
+        <br /><br />
+
+        <label
+          >Password Rules:<br />
+          8-12 characters <br />
+          1 uppercase <br />
+          1 lowercase <br />
+          1 special character (*&^%!) </label
+        ><br /><br /><br />
+
+        <input type="submit" value="Sign Up" class="form-button" />
+      </form>
+    </section>
+
+    <!-- -------------------VERIFICATION-------------------  -->
+
+    <section id="verification-page">
+      <div class="left-align-text">
+        <a
+          class="fake-link"
+          onclick="goToPage(originPage='verification-page', navigateToPage='login-page')"
+        >Back to Login</a>
+      </div>
+      <form method="post" class="bordered-form" id="verification">
+        <div class="center-image-container">
+          <img
+            src="images/placeholder.png"
+            alt="Profile Picture"
+            class="circle-image"
+          />
+        </div>
+        <h2>Please Verify your Email</h2>
+        <p>
+          Please enter the code sent to your email to get started using [app
+          name]!
+        </p>
+
+        <input
+          class="form-text-input"
+          required
+          type="email"
+          id="verify-numbers"
+          name="verify-numbers"
+        /><br /><br />
+
+        <input type="submit" value="Check Link" class="form-button" />
+      </form>
+    </section>
+    <script src="../js/login.js"></script>
+  </body>
+</html>
